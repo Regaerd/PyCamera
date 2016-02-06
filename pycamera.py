@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+__program__ = 'PyCamera'
+__version__ = '0.5.0'
+__description__ = 'Webcam terminal viewer'
+
 import curses, cv
 from random import choice
 from os import environ

@@ -13,7 +13,6 @@ class PyCamera(object):
         self._palette = None
         self.stdscr = stdscr
         self.cam = cv.CaptureFromCAM(0)
-        self.maths = True
 
     @property
     def palette(self): return self._palette
@@ -81,8 +80,6 @@ class Driver(object):
         if key == 'KEY_RESIZE': self.cam.view_resized()
         elif key==self.kKEY_ESC or lower=='q': self.running = False
         elif lower=='p': self.cam.random_palette()
-        elif lower=='m': self.cam.maths = not self.cam.maths
-
 
 def main(stdscr):
     Driver(stdscr).start()

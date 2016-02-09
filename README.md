@@ -16,11 +16,10 @@ python setup.py install
 ```
 python pycamera.py
 ```
-or
+If installed:
 ```
-pycamera.py
+pycamera
 ```
-if installed
 
 ###Controls
 

@@ -1,8 +1,14 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 __program__ = 'PyCamera'
 __version__ = '0.5.0'
 __description__ = 'Webcam terminal viewer'
+__author__ = 'Brandon Dreager'
+__author_email__ ='pycamera@subol.es'
+__copyright__ = 'Copyright (c) 2016 Brandon Dreager'
+__license__ = 'MIT'
+__website__ = 'https://github.com/Regaerd/PyCamera'
 
 import curses, cv
 from os import environ
@@ -11,7 +17,8 @@ class PyCamera(object):
     kPALETTES = [list(' .,/c(@#8'),
                  list(' .;-:!>7?Co$QHNM'),
                  list(' .,:;irsXA253hMHGS#9B&@'),
-                 list(" .,:;i1tfLCG08@")]
+                 list(' .,:;i1tfLCG08@'),
+                 list(' .:-=+*#%@')]
 
     def __init__(self, stdscr):
         self._palette = None
@@ -85,9 +92,10 @@ class Driver(object):
         elif key==self.kKEY_ESC or lower=='q': self.running = False
         elif lower=='p': self.cam.next_palette()
 
-def main(stdscr):
-    Driver(stdscr).start()
+def main(stdscr=None):
+    if not stdscr: curses.wrapper(main)
+    else:
+        environ.setdefault('ESCDELAY', '25')
+        Driver(stdscr).start()
 
-if __name__ == '__main__':
-    environ.setdefault('ESCDELAY', '25')
-    curses.wrapper(main)
+if __name__ == '__main__': main()

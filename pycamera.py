@@ -25,16 +25,15 @@ class PyCamera(object):
     def __init__(self, stdscr):
         self._palette = self._color_on = self.ascii_on = None
         self.stdscr = stdscr
-        self.cam = cv.CaptureFromCAM(-1) # TODO support all availble cameras
-        self.colors = None
-        self.color_on = False
+        self.cam = cv.CaptureFromCAM(-1) # TODO support all available cameras
         self.ascii_on = True
+        self.color_on = False
+        self.verbose = False
 
         base_cache = [int(i / 256.0 * 6) for i in range(256)]
         self.r_cache = [r * self.kDEPTH * self.kDEPTH for r in base_cache]
         self.g_cache = [g * self.kDEPTH for g in base_cache]
         self.b_cache = [b + 1 for b in base_cache]
-        self.verbose = False
 
     @property
     def palette(self): return self._palette
@@ -47,7 +46,7 @@ class PyCamera(object):
     def color_on(self): return self._color_on
     @color_on.setter
     def color_on(self, value):
-        self._color_on = value # if self.ascii_on or value else True
+        self._color_on = value
         if not self.color_on: self.ascii_on = True
         self.init_colors()
 
@@ -55,7 +54,7 @@ class PyCamera(object):
     def ascii_on(self): return self._ascii_on
     @ascii_on.setter
     def ascii_on(self, value):
-        self._ascii_on = value # if self.color_on or value else True
+        self._ascii_on = value
         if not self.ascii_on: self.color_on = True
         self.init_colors()
 

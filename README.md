@@ -27,6 +27,8 @@ Keys  | Actions
 ----- | -------
 <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>Esc</kbd> | quit
 <kbd>p</kbd> or <kbd>P</kbd> | switch to next ascii palette
+<kbd>a</kbd> or <kbd>A</kbd> | toggle ascii display
+<kbd>c</kbd> or <kbd>C</kbd> | toggle color display
 
 ###Extras
 PyCamera supports real time resizing thanks to `ncurses`! Oooh! Ahhh!

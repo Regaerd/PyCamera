@@ -132,6 +132,7 @@ class Driver(object):
         self.cam = PyCamera(stdscr)
 
         self.running = False
+        self.paused = False
 
     def start(self):
         self.running = True
@@ -140,7 +141,7 @@ class Driver(object):
 
     def run(self):
         while self.running:
-            self.cam.update()
+            if not self.paused: self.cam.update()
             self.update()
 
     def update(self):
@@ -153,7 +154,8 @@ class Driver(object):
         lower = key.lower()
         if key == 'KEY_RESIZE': self.cam.view_resized()
         elif key==self.kKEY_ESC or lower=='q': self.running = False
-        elif lower=='p': self.cam.next_palette()
+        elif lower=='p': self.paused = not self.paused
+        elif lower=='l': self.cam.next_palette()
         elif lower=='c': self.cam.toggle_color()
         elif lower=='a': self.cam.toggle_ascii()
         elif lower=='v': self.cam.verbose = not self.cam.verbose

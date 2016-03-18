@@ -26,7 +26,8 @@ pycamera
 Keys  | Actions
 ----- | -------
 <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>Esc</kbd> | quit
-<kbd>p</kbd> or <kbd>P</kbd> | switch to next ascii palette
+<kbd>p</kbd> or <kbd>P</kbd> | pause camera output
+<kbd>l</kbd> or <kbd>L</kbd> | switch to next ascii palette
 <kbd>a</kbd> or <kbd>A</kbd> | toggle ascii display
 <kbd>c</kbd> or <kbd>C</kbd> | toggle color display
 

@@ -1,18 +1,18 @@
 # PyCamera
 Webcam terminal viewer.
 
-###What
+### What
 Dynamic webcam display for the terminal. Webcam footage is rendered using an ascii palette.
 
-###Requires
+### Requires
 `ncurses` and `opencv`
 
-###Install
+### Install
 ```
 python setup.py install
 ```
 
-###Run
+### Run
 ```
 python pycamera.py
 ```
@@ -21,7 +21,7 @@ If installed:
 pycamera
 ```
 
-###Controls
+### Controls
 
 Keys  | Actions
 ----- | -------
@@ -31,10 +31,10 @@ Keys  | Actions
 <kbd>a</kbd> or <kbd>A</kbd> | toggle ascii display
 <kbd>c</kbd> or <kbd>C</kbd> | toggle color display
 
-###Extras
+### Extras
 PyCamera supports real time resizing thanks to `ncurses`! Oooh! Ahhh!
 
-###Support
+### Support
 
 - [x] Works on Linux completely
 
